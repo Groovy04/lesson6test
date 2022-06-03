@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    
+    {% extends "base.html" %}
+    {% block content %}
+    
+    
+    
+    
+    <p>HTML içerisinde hidden_tag() kullanımını kaldırdığımızda form validate olmuyor. BU da CSRF Token'ın kullanıldığı anlamına geliyor.<br><br>
+    Güvenli form bilgi alış-verişi için bu mekanizma önemli.<br><br></p>
+    
+
+    <form action="/update_one/{{ record_to_update.id }}" method="POST">
+        
+        {{form.hidden_tag()}}
+        
+        {{form.name.label(class="form-label")}} <br/>
+        {{form.name(class="form-control", value=record_to_update.name_db)}} <br/>
+
+        {{form.email.label(class="form-label")}}<br/>
+        {{form.email(class="form-control", value=record_to_update.email_db)}}<br/>
+        
+        {% for error in form.email.errors %}
+        <span style="color:red;">
+             Yanlış girilmiş e-mail adresi lütfen düzeltin..
+        </span>
+      {% endfor %}<br/>
+        
+        {{form.age.label(class="form-label")}}<br/>
+        {{form.age(class="form-control", value=record_to_update.age_db)}}<br/>
+        
+        {% for error in form.age.errors %}
+          <span style="color:red;">
+              {{error}} Lütfen bir sayı giriniz
+          </span>
+        {% endfor %}<br/>
+
+        {{form.education.label(class="form-label")}}<br/>
+        {{form.education(class="form-control", value=record_to_update.education_db)}}<br/>
+        {{form.additional_notes.label(class="form-label")}}<br/>
+        {{form.additional_notes(class="form-control", value=record_to_update.notes_db)}}<br/>
+
+        
+    
+        {{form.submit(class="btn btn-outline-primary")}}
+
+    </form>
+
+    <br>
+    {% if name_entered %}
+        Girdiğiniz isim : {{ name_entered}}
+    {% endif %}
+
+    <br>
+    {% if email_entered %}
+    Girdiğiniz email adresi : {{ email_entered}}
+    {% endif %}
+
+    <br>
+    {% if age_entered %}
+    Girdiğiniz yaşınız : {{ age_entered}}
+    {% endif %}
+
+    <br>
+    {% if education_entered %}
+        Girdiğiniz eğitim durumu : {{ education_entered}}
+    {% endif %}
+
+    <br>
+    {% if notes_entered %}
+        Girdiğiniz notlar : {{ notes_entered }}
+    {% endif %}
+
+
+
+
+</body>
+</html>
+
+{% endblock %}
+
+

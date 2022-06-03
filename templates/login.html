@@ -1,0 +1,34 @@
+<style>
+    .error {
+    color: red;
+    border: 2px solid red;
+}
+    .success {
+    color: limegreen;
+    border: 2px solid limegreen;
+}
+
+</style>
+
+
+{% extends "base.html"%}
+
+
+{%block content%}
+
+
+<b> <h3> Please enter your email and password below</h3> </b>
+<br/>
+<form method="POST">
+    {{form.hidden_tag()}}
+    {{form.email.label(class="form-label")}}<br/>
+    {{form.email(class="form-control")}}<br/>
+    {{form.password.label(class="form-label")}}<br/>
+    {{form.password(class="form-control")}}<br/>
+    {{form.submit(class="btn btn-outline-primary")}}
+</form>
+
+<br/><br/>
+
+
+{%endblock%}

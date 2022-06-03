@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+{% extends "base.html"%}
+
+{%block content%}
+
+<body>
+    
+    
+    
+    These are the records in the database table: <br>
+    
+    {% for record in all_records%}<br>
+        {{record.name_db}}<br>
+        <a href="{{url_for('show_one',id=record.id)}}">Show This Record</a> - 
+        <a href="{{url_for('delete_one',id=record.id)}}">Delete This Record</a> - 
+        <a href="{{url_for('update_one',id=record.id)}}">Update This Record</a>
+    {% endfor %}
+</body>
+</html>
+
+{% endblock %}
+{{ url_for('index') }}

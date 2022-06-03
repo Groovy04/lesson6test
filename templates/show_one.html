@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "base.html"%}
+
+    {%block content%}
+    
+   
+    
+
+    The details of this record are:<br>
+    <table class="table table-striped">
+        <tr>
+            <th>Title </th> <th> Record Details</th>
+        </tr>
+        <tr>
+            <td>Record ID :</td><td> {{record_to_show.id}}</td>
+        </tr>
+        <tr>
+            <td>Name : </td><td>{{record_to_show.name_db}}</td>
+        </tr>
+        <tr>
+            <td>Email : </td><td>{{record_to_show.email_db}}</td>
+        </tr>
+        <tr>
+            <td>Age : </td><td>{{record_to_show.age_db}}</td>
+        </tr>
+        <tr>
+            <td>Education : </td> <td>{{record_to_show.education_db}}</td>
+        </tr>
+        <tr>
+            <td>Notes : </td><td>{{record_to_show.notes_db}}</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+
+{% endblock %}
