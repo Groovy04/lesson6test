@@ -28,7 +28,7 @@ app.config['SECRET_KEY'] = "mysecret_key"
 
 #11.05.2022
 #app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://USERNAME:PASSWORD.HOST_IP/tansubaktiran"
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://tansubaktiran:Avz9p9&9Dgsu_099@193.111.73.99/tansubaktiran"
+app.config['SQLALCHEMY_DATABASE_URI'] = "changed"
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 
